@@ -37,7 +37,7 @@ npm link
 
 커스텀 모듈에 Symbolic Link를 만들어 줍니다.
 
-### 4. 이 모듈에서 선언한 타입을 사용할 패키지에 설치
+### 4. 이 모듈을 불러올 프로젝트에 설치
 
 ```bash
 # 커스텀 모듈을 설치할 프로젝트 디렉토리로 이동
@@ -49,7 +49,30 @@ cd {설치할 프로젝트의 디렉토리 경로}
 npm link shared-types
 ```
 
-### 5. 프로젝트에서의 호출
+### 5. 이 모듈을 불러올 프로젝트에서의 설정
+
+tsconfig.json를 다음과 같은 형태로 설정합니다.
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@your-org/shared-types": ["node_modules/shared-types/src"]
+    },
+    "typeRoots": ["./node_modules/@types", "./node_modules/shared-types"]
+  },
+  "include": ["src/**/*"]
+}
+```
+
+### 6. 프로젝트에서의 호출
 
 ```ts
 import "shared-types";
