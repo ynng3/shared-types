@@ -30,7 +30,9 @@ npm install
 ```bash
 # 타입 패키지 빌드
 npx tsc
+```
 
+```bash
 # 빌드된 패키지로 Symbolic Link 생성
 npm link
 ```
