@@ -1,0 +1,21 @@
+{
+  "name": "shared-types",
+  "version": "1.0.0",
+  "description": "A module for sharing type settings between TypeScript projects that use the same type.",
+  "main": "src/global.d.ts",
+  "keywords": [
+    "typescript",
+    "shared",
+    "module",
+    "symbolic",
+    "link"
+  ],
+  "author": "알노리(전영재) <ceo@sinsait.com> (https://www.sinsait.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ynng3/shared-types.git"
+  },
+  "dependencies": {
+    "typescript": "^5.5.3"
+  }
+}
